@@ -90,6 +90,37 @@ patch '/design/apis/:id' do
 	@design.to_json
 end
 
+get '/fun' do
+	erb :for_fun
+end
+
+get '/fun/apis' do
+	content_type :json
+	@fun = Api.all
+	@fun.to_json
+end
+
+post '/fun/apis' do
+	content_type :json
+	@fun = Api.new
+	@fun.link = params[:link]
+	@fun.description = params[:description]
+	@fun.category = params[:category]
+	@fun.save
+	@fun.to_json
+end
+
+patch '/fun/apis/:id' do
+	content_type :json
+	@fun = Api.find_by_id(params[:id])
+	@fun.link = params[:link]
+	@fun.description = params[:description]
+	@fun.category = params[:category]
+	@fun.save
+	@fun.to_json
+end
+
+
 
 
 
