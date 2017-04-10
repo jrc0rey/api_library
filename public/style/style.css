@@ -7,6 +7,9 @@ body {
 .hero {
   background-color: #31333F;
   height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .nav {
   background-color: #31333F;
