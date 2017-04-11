@@ -6,9 +6,19 @@ get '/apis' do
 	@api.to_json
 end
 
+post '/apis' do
+	@post = Api.create(link: params[:link], category: params[:category], description: params[:description])
+	redirect '/home'
+end
+
+delete '/apis/:id' do
+	@api = Api.find_by_id(params[:id])
+	@api.destroy
+end
+
 get '/utilities' do
-	@utilityLink = Api.where(category: :Utilities).pluck(:link)
-	@utilityDescrip = Api.where(category: :Utilities).pluck(:description)
+	@utilityLink = Api.where(category: :Utilities).pluck(:link).reverse
+	@utilityDescrip = Api.where(category: :Utilities).pluck(:description).reverse
 	erb :utilities
 end
 
