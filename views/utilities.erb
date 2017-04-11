@@ -1,1 +1,15 @@
-hey hey
+
+
+
+<div>
+<% @utilityLink.each do |link| %>
+	<ul>
+		<li><a href="<%= link %>"><%= link %></a></li>
+	</ul>
+<%end%>
+
+<% @utilityDescrip.each do |description| %>
+	<p>
+	<%= description %>
+	</p>
+<%end%>

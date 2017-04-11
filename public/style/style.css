@@ -43,19 +43,41 @@ body {
 .link3,
 .link4 {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
   background-color: #31333F;
   height: 200px;
 }
-.link1Hover {
+.link1 .label,
+.link2 .label,
+.link3 .label,
+.link4 .label {
+  margin-bottom: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #FCFE6C;
+}
+.form {
+  width: 100%;
+  height: 300px;
+  /*background-color: red;*/
+  margin-top: 45px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
-  background-color: #FCFE6C;
-  height: 200px;
+  align-items: center;
+}
+.form .contribute {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+  color: #31333F;
+}
+.form input {
+  width: 300px;
+  height: 60px;
 }
 header {
   background-color: #31333F;

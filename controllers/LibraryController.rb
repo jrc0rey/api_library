@@ -1,13 +1,21 @@
 class LibraryController < ApplicationController
 
+get '/apis' do
+	content_type :json
+	@api = Api.all
+	@api.to_json
+end
+
 get '/utilities' do
+	@utilityLink = Api.where(category: :Utilities).pluck(:link)
+	@utilityDescrip = Api.where(category: :Utilities).pluck(:description)
 	erb :utilities
 end
 
 get '/utilities/apis' do
 	content_type :json
-	@api = Api.all
-	@api.to_json
+	@utility = Api.where(category: :Utilities).pluck(:link, :description)
+	@utility.to_json
 end
 
 post '/utilities/apis' do
@@ -36,7 +44,7 @@ end
 
 get '/media/apis' do
 	content_type :json
-	@media = Api.all
+	@media = Api.where(category: :Media).pluck(:link)
 	@media.to_json
 end
 
@@ -66,7 +74,7 @@ end
 
 get '/design/apis' do
 	content_type :json
-	@design = Api.all
+	@design = Api.where(category: :Design).pluck(:link)
 	@design.to_json
 end
 
@@ -96,7 +104,7 @@ end
 
 get '/fun/apis' do
 	content_type :json
-	@fun = Api.all
+	@fun = Api.where(category: :Fun).pluck(:link)
 	@fun.to_json
 end
 

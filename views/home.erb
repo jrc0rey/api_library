@@ -5,7 +5,7 @@
 		<div class="twelve columns">
 			<div class="nav">
 			<p class="about"> About Me </p>
-			<p class="contribute"> Contribute </p>
+			<!-- <p class="contribute"> Contribute </p> -->
 			</div>
 		</div>
 </div>
@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="twelve columns">
 			<div class="hero">
-				<img src="/images/logo_api.svg" width="700" height="700"/>
+				<img src="/images/logo_api.svg" width="800" height="800"/>
 			</div>
 		</div>
 </div>
@@ -36,26 +36,51 @@
     	<div class="three columns">
     		<div class="link1">
     		<img src="/images/utilities.svg" width="150" height="150"/>
+    		<p class="label">Utilities</p>
 			</div>
 		</div>
    	 	
    	 	<div class="three columns">
    	 		<div class="link2">
     			<img src="/images/media.svg" width="150" height="150"/>
+    			<p class="label">Media</p>
 			</div>
    	 	</div>
    	 	
    	 	<div class="three columns">
    	 		<div class="link3">
     			<img src="/images/design.svg" width="150" height="150"/>
+    			<p class="label">Design</p>
 			</div>
    	 	</div>
    	 	
    	 	<div class="three columns">
    	 		<div class="link4">
     			<img src="/images/fun.svg" width="150" height="150"/>
+    			<p class="label">Fun</p>
 			</div>
    	 	</div>
+	</div>
+
+	<div class="row">
+		<div class="twelve columns">
+			<div class="form">
+				<h1 class="contribute">Contribute</h1>
+				<div class="formContainer">
+				<form action="/library/apis" method="POST">
+					<input type="text" name="link" placeholder="link"/>
+					<select name="category">
+    					<option value="Utilities">Utilities</option>
+    					<option value="Media">Media</option>
+    					<option value="Design">Design</option>
+    					<option value="Fun">Fun</option>
+  					</select>
+					<input type="text" name="description" placeholder="description" maxlength="100" />
+					<button>Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </div>
