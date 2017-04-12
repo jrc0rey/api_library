@@ -1,1 +1,82 @@
-design page
+<header class="header">
+
+<div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<div class="nav">
+			<p class="home"> Home </p>
+			<!-- <p class="contribute"> Contribute </p> -->
+			</div>
+		</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<div class="hero">
+				<img class="utilLogo" src="/images/design.svg" width="250" height="250"/>
+			</div>
+		</div>
+</div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="12 columns">
+			<% @designLink.each do |link| %>
+				<div class="data">
+					<p class="linkDescrip"><%=link[1]%></p>
+					<a target="_blank" href="<%=link[0]%>"><%=link[0]%></a>
+				</div>
+			<%end%>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+    	
+    	<div class="three columns">
+    		<div class="link1">
+    		<img src="/images/utilities.svg" width="150" height="150"/>
+    		<p class="label">Utilities</p>
+			</div>
+		</div>
+   	 	
+   	 	<div class="three columns">
+   	 		<div class="link2">
+    			<img src="/images/media.svg" width="150" height="150"/>
+    			<p class="label">Media</p>
+			</div>
+   	 	</div>
+   	 	
+   	 	<div class="three columns">
+   	 		<div class="link3">
+    			<img src="/images/design.svg" width="150" height="150"/>
+    			<p class="label">Design</p>
+			</div>
+   	 	</div>
+   	 	
+   	 	<div class="three columns">
+   	 		<div class="link4">
+    			<img src="/images/fun.svg" width="150" height="150"/>
+    			<p class="label">Fun</p>
+			</div>
+   	 	</div>
+	</div>
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="row">
+		<div class="twelve columns">
+			<div class="foot">
+				<p class="footText">
+				Built by Jason Corey &copy 2017
+				</p>
+			</div>
+		</div>
+</div>
+</div>
+</footer>

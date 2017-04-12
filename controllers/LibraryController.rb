@@ -17,8 +17,7 @@ delete '/apis/:id' do
 end
 
 get '/utilities' do
-	@utilityLink = Api.where(category: :Utilities).pluck(:link).reverse
-	@utilityDescrip = Api.where(category: :Utilities).pluck(:description).reverse
+	@utilityLink = Api.where(category: :Utilities).pluck(:link, :description).reverse
 	erb :utilities
 end
 
@@ -49,6 +48,7 @@ patch '/utilities/apis/:id' do
 end
 
 get '/media' do
+	@mediaLink = Api.where(category: :Media).pluck(:link, :description).reverse
 	erb :media
 end
 
@@ -79,6 +79,7 @@ patch '/media/apis/:id' do
 end
 
 get '/design' do
+	@designLink = Api.where(category: :Design).pluck(:link, :description).reverse
 	erb :design
 end
 
@@ -109,6 +110,7 @@ patch '/design/apis/:id' do
 end
 
 get '/fun' do
+	@funLink = Api.where(category: :Fun).pluck(:link, :description).reverse
 	erb :for_fun
 end
 
