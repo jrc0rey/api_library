@@ -7,8 +7,9 @@ get '/apis' do
 end
 
 post '/apis' do
+	route = params[:category].downcase
 	@post = Api.create(link: params[:link], category: params[:category], description: params[:description])
-	redirect '/home'
+	redirect '/library/' + route
 end
 
 delete '/apis/:id' do
