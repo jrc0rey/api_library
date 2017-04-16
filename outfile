@@ -1,0 +1,140 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.2
+-- Dumped by pg_dump version 9.6.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: api; Type: TABLE; Schema: public; Owner: jason
+--
+
+CREATE TABLE api (
+    id integer NOT NULL,
+    link character varying(255),
+    description character varying(255),
+    category character varying(255)
+);
+
+
+ALTER TABLE api OWNER TO jason;
+
+--
+-- Name: api_id_seq; Type: SEQUENCE; Schema: public; Owner: jason
+--
+
+CREATE SEQUENCE api_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE api_id_seq OWNER TO jason;
+
+--
+-- Name: api_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jason
+--
+
+ALTER SEQUENCE api_id_seq OWNED BY api.id;
+
+
+--
+-- Name: api id; Type: DEFAULT; Schema: public; Owner: jason
+--
+
+ALTER TABLE ONLY api ALTER COLUMN id SET DEFAULT nextval('api_id_seq'::regclass);
+
+
+--
+-- Data for Name: api; Type: TABLE DATA; Schema: public; Owner: jason
+--
+
+COPY api (id, link, description, category) FROM stdin;
+10	https://www.flickr.com/services/api/	Flickr	Media
+1	https://openweathermap.org/api	Open weather API	Utilities
+11	https://github.com/Giphy/GiphyAPI	Giphy. Gifs	Media
+12	https://unsplash.com/developers	Unsplash. A community for photographers to share royalty free photos	Media
+14	https://developers.google.com/youtube/	You Tube	Media
+13	https://www.themoviedb.org/documentation/api	Movie Database	Media
+15	https://omdbapi.com/	Movie Database. Open	Media
+16	https://developer.vimeo.com/	Vimeo	Media
+17	https://rapanuiclothing.com/api-t-shirt-printing/	T-shirt Template	Design
+18	http://pokeapi.co/	Pokemon RESTful	Fun
+19	http://www.foaas.com/	FUCK OFF! As a service	Fun
+20	http://developer.marvel.com/	Marvel Comics	Fun
+21	https://swapi.co/	Star Wars	Fun
+22	https://market.mashape.com/	Mashape. API Marketplace	Utilities
+23	http://www.brewerydb.com/browse	Various Beers and Brewaries	Utilities
+24	https://developer.spotify.com/web-api/	Spotify	Utilities
+25	https://watson-api-explorer.mybluemix.net/	Watson IBM	Utilities
+26	http://jservice.io/	Trivia Generator	Fun
+27	https://dev.twitter.com/rest/public	Twitter	Utilities
+28	https://opendata.cityofnewyork.us/	NYC Open Data	Utilities
+2	https://data.cityofchicago.org/	Data portal for the city of Chicago	Utilities
+3	https://www.data.gov/developers/apis	Data related to various government agencies	Utilities
+4	https://developers.google.com/maps/	Google Maps API	Utilities
+5	https://open.fda.gov/api/	Food and Drug Administration	Utilities
+6	https://api.nasa.gov/	NASA	Utilities
+7	https://sunrise-sunset.org/api	Sunset & Sunrise Data	Utilities
+8	http://www.transitchicago.com/developers/	Chicago Public Transportation CTA	Utilities
+9	https://datausa.io/about/api/	USA Data	Utilities
+32	http://www.colourlovers.com/api	Random background colors 	Design
+33	https://developers.google.com/places/web-service/intro	Google Places. Information about thousands of locations	Utilities
+34	http://loripsum.net/	Generates lorem ipsum	Design
+39	https://www.instagram.com/developer/	Instagram API	Media
+40	http://products.wolframalpha.com/api/	WolframAlpha. Get knowledge and answers through dynamic computation.	Utilities
+41	https://data.sfgov.org/browse	San Francisco open data	Utilities
+42	http://www.last.fm/api	Last.fm. Social music playground	Media
+\.
+
+
+--
+-- Name: api_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jason
+--
+
+SELECT pg_catalog.setval('api_id_seq', 42, true);
+
+
+--
+-- Name: api api_pkey; Type: CONSTRAINT; Schema: public; Owner: jason
+--
+
+ALTER TABLE ONLY api
+    ADD CONSTRAINT api_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
