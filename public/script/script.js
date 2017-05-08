@@ -30,9 +30,9 @@ $('.link4').click(function(){
 	return false
 })
 
-$('.home').css('cursor', 'pointer');
+// $('.home').css('cursor', 'pointer');
 
-$('.home').click(function(){
+$('.homeBtn').click(function(){
 	window.location.href = '/home'
 	return false
 })

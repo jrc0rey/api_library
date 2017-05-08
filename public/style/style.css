@@ -16,8 +16,6 @@ body {
   height: 30px;
   display: flex;
 }
-.nav .about,
-.nav .contribute,
 .nav .home {
   color: #FCFE6C;
   font-family: 'Raleway', sans-serif;
@@ -25,6 +23,18 @@ body {
   font-size: 11px;
   margin-left: 12px;
   margin-top: 7px;
+}
+.homeBtn {
+  background-color: #31333F;
+  width: 100%;
+  color: #FCFE6C;
+  margin-top: 30px;
+}
+.homeBtn:hover {
+  color: white;
+}
+.homeBtn:focus {
+  color: white;
 }
 .description {
   /*background-color: yellow;*/
